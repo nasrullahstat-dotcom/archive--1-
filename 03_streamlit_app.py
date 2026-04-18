@@ -45,7 +45,7 @@ def load_models_and_processors():
         models_dir = Path('models')
         
         # Load model
-        with open(models_dir / 'best_model_Random_Forest.pkl', 'rb') as f:
+        with open(models_dir / 'best_model_SVM_(RBF).pkl', 'rb') as f:
             model = pickle.load(f)
         
         # Load scaler
@@ -170,8 +170,8 @@ def main():
         st.header("📊 Dataset Info")
         st.write("""
         - Total Samples: 1,211
-        - Features Extracted: 65 per sample
-        - Model: Gradient Boosting Classifier
+        - Features Extracted: 60 per sample
+        - Model: SVM (RBF) Classifier
         - Cross-validation: 5-fold
         """)
     
@@ -332,9 +332,9 @@ def main():
         with col1:
             st.metric("Classes", len(label_encoder.classes_))
         with col2:
-            st.metric("Total Features", 65)
+            st.metric("Total Features", 60)
         with col3:
-            st.metric("Model Type", "Gradient Boosting")
+            st.metric("Model Type", "SVM (RBF)")
         
         st.markdown("### 📊 Disease Distribution in Dataset")
         
@@ -366,12 +366,12 @@ def main():
         st.markdown("### 🎯 How It Works")
         st.markdown("""
         1. **Audio Upload**: Submit a respiratory sound recording (WAV format)
-        2. **Feature Extraction**: Extract 65 features including:
+        2. **Feature Extraction**: Extract 60 features including:
            - MFCC (Mel-Frequency Cepstral Coefficients)
            - Spectral features (centroid, rolloff)
            - Zero crossing rate
            - Energy and chroma features
-        3. **Model Prediction**: Gradient Boosting classifier analyzes features
+        3. **Model Prediction**: SVM (RBF) classifier analyzes features
         4. **Classification**: Outputs probability for each respiratory condition
         """)
         
