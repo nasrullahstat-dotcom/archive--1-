@@ -1,0 +1,4 @@
+Best Model: SVM (RBF)
+Accuracy: 0.9259
+F1-Score: 0.9262
+Classes: Bronchial, asthma, copd, healthy, pneumonia
